@@ -7,20 +7,21 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
+import palindrome.game.GameException;
 import palindrome.game.domain.User;
 import palindrome.game.domain.UserPoints;
 
 public class UserServiceTest {
 
-	private UserService userService;
+	private UserPointsService userService;
 
 	@Before
 	public void before() {
-		userService = new UserService();
+		userService = new UserPointsService();
 	}
 
 	@Test
-	public void testAddPoints() {
+	public void testAddPoints() throws GameException {
 
 		User user1 = new User("Ben", "Franklin");
 		userService.addNewUser(user1);
@@ -30,7 +31,7 @@ public class UserServiceTest {
 	}
 
 	@Test
-	public void testSetPoints() {
+	public void testSetPoints() throws GameException {
 
 		User user = new User("Ben", "Franklin");
 		userService.addNewUser(user);
@@ -40,7 +41,7 @@ public class UserServiceTest {
 	}
 
 	@Test
-	public void testAddExistingUser() {
+	public void testAddExistingUser() throws GameException {
 
 		User user = new User("Ben", "Franklin");
 		userService.addNewUser(user);
@@ -54,7 +55,7 @@ public class UserServiceTest {
 	}
 
 	@Test
-	public void testGetTopNUsers() {
+	public void testGetTopNUsers() throws GameException {
 
 		User user1 = new User("Ben", "Franklin");
 		userService.addNewUser(user1);

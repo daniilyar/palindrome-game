@@ -1,5 +1,8 @@
 package palindrome.game.domain;
 
+import javax.annotation.concurrent.Immutable;
+
+@Immutable
 public class User {
 
 	private final String firstName;

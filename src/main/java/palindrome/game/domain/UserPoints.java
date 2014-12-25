@@ -1,5 +1,8 @@
 package palindrome.game.domain;
 
+import javax.annotation.concurrent.Immutable;
+
+@Immutable
 public class UserPoints implements Comparable<UserPoints> {
 
 	private final User user;

@@ -4,22 +4,23 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
+import palindrome.game.GameException;
 import palindrome.game.domain.User;
 import palindrome.game.domain.UserPoints;
 
-public class UserService implements IUserService {
+public class UserPointsService implements IUserService {
 
 	private final Set<UserPoints> userPointsSet = new TreeSet<>();
 
 	@Override
-	public UserPoints addNewUser(User user) {
+	public UserPoints addNewUser(User user) throws GameException {
 
 		UserPoints userPoints = getUserPoints(user);
 		if (userPoints == null) {
 			userPoints = new UserPoints(user, 0);
 		} else {
 			String errorMsg = String.format("User %s already exists and has %s points", user, userPoints.getPoints());
-			throw new IllegalStateException(errorMsg);
+			throw new GameException(errorMsg);
 		}
 
 		userPointsSet.add(userPoints);

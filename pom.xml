@@ -12,6 +12,13 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
+
+	<!-- This is used only for marking immutable domains with "Immutable" annotation -->
+		<dependency>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>jsr305</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
