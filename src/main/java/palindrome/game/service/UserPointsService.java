@@ -8,7 +8,7 @@ import palindrome.game.GameException;
 import palindrome.game.domain.User;
 import palindrome.game.domain.UserPoints;
 
-public class UserPointsService implements IUserService {
+public class UserPointsService implements IUserPointsService {
 
 	private final Set<UserPoints> userPointsSet = new TreeSet<>();
 

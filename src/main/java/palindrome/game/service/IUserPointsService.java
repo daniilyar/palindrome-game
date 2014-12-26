@@ -6,7 +6,7 @@ import palindrome.game.GameException;
 import palindrome.game.domain.User;
 import palindrome.game.domain.UserPoints;
 
-public interface IUserService {
+public interface IUserPointsService {
 
 	UserPoints addNewUser(User user) throws GameException;
 
